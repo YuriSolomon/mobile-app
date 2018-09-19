@@ -29,6 +29,7 @@ export default {
 }
 body {
   background: url("./assets/background.jpg");
-  background-size: cover;
+  background-size: contain, cover;
+  min-height: 600px;
 }
 </style>

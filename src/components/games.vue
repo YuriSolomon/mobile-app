@@ -1,10 +1,11 @@
 <template>
   <div class="games container">
-    <h4>NYSL Game Information</h4>
-    <h6>Fall Schedule</h6>
-    <p>All games take place on Saturday</p>
+    <h4>Game Information</h4>
+    <h5>Fall Schedule</h5>
+    <p>*All games take place on Saturday*</p>
+    <div>
       <h6>SEPTEMBER</h6>
-      <table class="table table-striped">  
+      <table class="table table-dark">  
         <tr>
           <th>Date</th>
           <th>Teams</th>
@@ -60,7 +61,7 @@
         </tr>
         </table>
         <h6>OCTOBER</h6>
-        <table class="table table-striped">  
+        <table class="table table-dark">  
         <tr>
           <th>Dates</th>
           <th>Teams</th>
@@ -110,6 +111,7 @@
           <td>1:00 p.m.</td>
         </tr>
     </table>
+    </div>
   </div>
 </template>
 
@@ -121,9 +123,23 @@ export default {
 
 <style scoped>
 .table {
-  font-size: 70%;
+  font-size: 65%;
 }
 .games {
   color: white;
+}
+h4 {
+  margin-top: 70px;
+}
+p {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+h6 {
+  text-align: left;
+  text-decoration: underline;
+}
+.table-dark {
+  background: rgb(33, 37, 41, 0.7)!important;
 }
 </style>
