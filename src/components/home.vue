@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <h1>NYSL</h1>
     <img id="logo" src="../assets/nysl_logo.png" alt="logo">
   </div>
 </template>
@@ -16,6 +15,7 @@ h1 {
   font-size: 200%;
 }
 #logo {
+  margin-top: 25%;
   width: 80%;
 }
 </style>
