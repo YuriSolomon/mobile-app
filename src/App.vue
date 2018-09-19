@@ -28,7 +28,7 @@ export default {
   margin-top: 60px;
 }
 body {
-  background: url("./assets/background.jpg"), no-repeat;
+  background: url("./assets/background.jpg");
   background-size: cover;
 }
 </style>
