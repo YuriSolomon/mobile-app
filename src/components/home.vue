@@ -1,6 +1,7 @@
 <template>
   <div class="home">
-    <p>This is my  home page</p>
+    <h1>NYSL</h1>
+    <img id="logo" src="../assets/nysl_logo.png" alt="logo">
   </div>
 </template>
 
@@ -11,7 +12,10 @@ export default {
 </script>
 
 <style scoped>
-    p{
-        color: red;
-    }
+h1 {
+  font-size: 200%;
+}
+#logo {
+  width: 80%;
+}
 </style>

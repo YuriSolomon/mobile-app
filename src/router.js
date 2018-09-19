@@ -2,21 +2,21 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 
 import Home from './components/home.vue';
-import Test from './components/test.vue';
+import Games from './components/games.vue';
 
 Vue.use(VueRouter);
 
 const router = new VueRouter({
     mode: 'history',
     routes: [{
-            path: '/home',
+            path: '/',
             name: Home,
             component: Home
         },
         {
-            path: '/test',
-            name: Test,
-            component: Test
+            path: '/games',
+            name: Games,
+            component: Games
         }
     ]
 });
