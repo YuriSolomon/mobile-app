@@ -27,9 +27,8 @@ export default {
 
             var data = realData;
             this.games = data.matches.games;
-            console.log(this.games)
+
             this.$store.commit('getGames',this.games);
-            console.log(this.$store.state.games)
 
         })
   }

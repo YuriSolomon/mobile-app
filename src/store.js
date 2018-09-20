@@ -5,11 +5,11 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state:{
-games:[],
+    games:[],
   },
   mutations: {
-getGames(state, games){
-    this.state.games = games;
-}
+    getGames(state, games){
+      this.state.games = games;
+    }
   }
 })

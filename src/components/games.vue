@@ -12,7 +12,7 @@
           <td>Location</td>
           <td>Times</td>
         </tr>
-        <tbody id="myTBody">
+        <tbody>
           <tr v-for="(game, index) in games" :key='index'>
             <td>{{game.date}}</td>
             <td>{{game.name}}</td>
