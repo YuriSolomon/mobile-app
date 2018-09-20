@@ -14,6 +14,21 @@ export default {
   name: 'app',
   components: {
     Navigation
+  },
+  data() {
+    return{
+      games: []
+    }
+  },
+  beforeCreate() {
+    fetch("https://api.myjson.com/bins/1bzm30", {})
+        .then(response => response.json())
+        .then(realData => {
+
+            var data = realData;
+            this.games = data.matches.games;
+
+        })
   }
 }
 </script>
