@@ -1,0 +1,141 @@
+{
+    "matches": {
+        "games": [{
+                "name": "U1 vs. U4",
+                "location": "AJ Katzenmaier",
+                "adress": "24 W. Walton St., Chicago, IL 60610",
+                "month": "september",
+                "date": "09/01",
+                "time": "9:30 a.m."
+            },
+            {
+                "name": "U3 vs. U2",
+                "location": "Greenbay",
+                "adress": "1734 N. Orleans St., Chicago, IL 60614",
+                "month": "september",
+                "date": "09/01",
+                "time": "1:00 p.m."
+            },
+            {
+                "name": "U5 vs. U6",
+                "location": "Howard A Yeager",
+                "adress": "2245 N. Southport Ave., Chicago, IL 60614",
+                "month": "september",
+                "date": "09/08",
+                "time": "9:30 a.m."
+            },
+            {
+                "name": "U6 vs. U1",
+                "location": "Marjorie P Hart",
+                "adress": "2625 N. Orchard St., Chicago, IL 60614",
+                "month": "september",
+                "date": "09/08",
+                "time": "1:00 p.m."
+            },
+            {
+                "name": "U2 vs. U4",
+                "location": "North",
+                "adress": "1409 N. Ogden Ave., Chicago, IL 60610",
+                "month": "september",
+                "date": "09/15",
+                "time": "9:30 a.m."
+            },
+            {
+                "name": "U3 vs. U5",
+                "location": "AJ Katzenmaier",
+                "adress": "24 W. Walton St., Chicago, IL 60610",
+                "month": "september",
+                "date": "09/15",
+                "time": "1:00 p.m."
+            },
+            {
+                "name": "U1 vs. U3",
+                "location": "South",
+                "adress": "2101 N. Fremont St., Chicago, IL 60614",
+                "month": "september",
+                "date": "09/22",
+                "time": "9:30 a.m."
+            },
+            {
+                "name": "U2 vs. U6",
+                "location": "Howard A Yeager",
+                "adress": "2245 N. Southport Ave., Chicago, IL 60614",
+                "month": "september",
+                "date": "09/22",
+                "time": "1:00 p.m."
+            },
+            {
+                "name": "U4 vs. U5",
+                "location": "Greenbay",
+                "adress": "1734 N. Orleans St., Chicago, IL 60614",
+                "month": "september",
+                "date": "09/29",
+                "time": "9:30 a.m."
+            },
+            {
+                "name": "U2 vs. U5",
+                "location": "Marjorie P Hart",
+                "adress": "2625 N. Orchard St., Chicago, IL 60614",
+                "month": "october",
+                "date": "10/06",
+                "time": "9:30 a.m."
+            },
+            {
+                "name": "U1 vs. U6",
+                "location": "South",
+                "adress": "2101 N. Fremont St., Chicago, IL 60614",
+                "month": "october",
+                "date": "10/06",
+                "time": "1:00 p.m."
+            },
+            {
+                "name": "U3 vs. U4",
+                "location": "Howard A Yeager",
+                "adress": "2245 N. Southport Ave., Chicago, IL 60614",
+                "month": "october",
+                "date": "10/13",
+                "time": "9:30 a.m."
+            },
+            {
+                "name": "U5 vs. U4",
+                "location": "Greenbay",
+                "adress": "1734 N. Orleans St., Chicago, IL 60614",
+                "month": "october",
+                "date": "10/13",
+                "time": "1:00 p.m."
+            },
+            {
+                "name": "U6 vs. U3",
+                "location": "North",
+                "adress": "1409 N. Ogden Ave., Chicago, IL 60610",
+                "month": "october",
+                "date": "10/20",
+                "time": "9:30 a.m."
+            },
+            {
+                "name": "U2 vs. U4",
+                "location": "Marjorie P Hart",
+                "adress": "2625 N. Orchard St., Chicago, IL 60614",
+                "month": "october",
+                "date": "10/20",
+                "time": "1:00 p.m."
+            },
+            {
+                "name": "U3 vs. U1",
+                "location": "AJ Katzenmaier",
+                "adress": "24 W. Walton St., Chicago, IL 60610",
+                "month": "october",
+                "date": "10/27",
+                "time": "9:30 a.m."
+            },
+            {
+                "name": "U5 vs. U6",
+                "location": "Howard A Yeager",
+                "adress": "2245 N. Southport Ave., Chicago, IL 60614",
+                "month": "october",
+                "date": "10/27",
+                "time": "1:00 p.m."
+            }
+        ]
+    }
+}
