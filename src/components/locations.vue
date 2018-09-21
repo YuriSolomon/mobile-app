@@ -3,40 +3,63 @@
     <h4>Locations</h4>
     <div class="container">
         <div v-for="(item, index) in locations" :key="index">
-            <p>{{item}}</p>
+            <h5>{{item.location}}</h5>
+            <p>{{item.adress}}</p>
         </div>
     </div>
   </div>
 </template>
 
 <script>
+import {mapState} from 'vuex';
+
 export default {
     name: "Locations",
     created() {
         this.games = this.$store.state.games;
-        console.log(this.games);
-        let locInside = [];
+        // reducing elements' keys to location and adress
         this.games.forEach(game => {
-             if (!locInside.includes(game.location)) {
-                locInside.push(game.location)
+            let newObject = {};
+            for(let key in game){
+                if(key == 'location' || key == 'adress'){
+                    newObject[key] = game[key];
+                }
             }
-        });
+            this.mappedLocations.push(newObject);
+        })
+        // reducing repeated elements
+        let locInside = [];
+        for(let i = 0; i < this.mappedLocations.length; i++){
+            var item = this.mappedLocations[i];
+            var duplicated = false;
+         
+            for(let j = 0; j < i; j++){
+                if( i != j ){
+                    if( this.mappedLocations[j].location == item.location && this.mappedLocations[j].address == item.address ) {
+                        duplicated = true;
+                    }
+                }
+            } 
+
+            if(!duplicated){
+               locInside.push(item);
+            }
+        }       
+
         this.locations = locInside;
-        // eslint-disable-next-line
-        console.log(this.locations);
-        //  this.games = this.$store.state.games; 
+        // console.log(this.locations);
     },
     data() {
         return{
             locations: [],
-            // games: []
+            mappedLocations: []
         }
     },
     computed: {
-    games() {
-      return this.$store.state.games;
+        ...mapState({
+            games: "games"
+        })
     }
-  }
 }
 
 
