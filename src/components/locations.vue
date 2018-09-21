@@ -1,15 +1,20 @@
 <template>
   <div class="locations">
     <h4>Locations</h4>
-   
+    <div class="container">
+        <div v-for="(item, index) in locations" :key="index">
+            <p>{{item}}</p>
+        </div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
     name: "Locations",
-    beforeCreate() {
+    created() {
         this.games = this.$store.state.games;
+        console.log(this.games);
         let locInside = [];
         this.games.forEach(game => {
              if (!locInside.includes(game.location)) {
@@ -19,14 +24,20 @@ export default {
         this.locations = locInside;
         // eslint-disable-next-line
         console.log(this.locations);
+        //  this.games = this.$store.state.games; 
     },
     data() {
         return{
             locations: [],
-            games: []
+            // games: []
         }
+    },
+    computed: {
+    games() {
+      return this.$store.state.games;
     }
-};
+  }
+}
 
 
 
