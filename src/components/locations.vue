@@ -16,7 +16,6 @@ import {mapState} from 'vuex';
 export default {
     name: "Locations",
     created() {
-        this.games = this.$store.state.games;
         // reducing elements' keys to location and adress
         this.games.forEach(game => {
             let newObject = {};
@@ -60,10 +59,12 @@ export default {
             games: "games"
         })
     }
+    // computed: {
+    //     games() {
+    //      return this.$store.state.games;
+    //     }
+    // }
 }
-
-
-
 </script>
 
 <style scoped>
@@ -77,10 +78,10 @@ h5 {
     text-align: left;
     text-decoration: underline;
     margin-top: 30px;
-    background: rgb(33, 37, 41, 0.7)!important;
+    background: rgb(33, 37, 41, 0.7);
 }
 P {
     text-align: left;
-    background: rgb(33, 37, 41, 0.7)!important;
+    background: rgb(33, 37, 41, 0.7);
 }
 </style>

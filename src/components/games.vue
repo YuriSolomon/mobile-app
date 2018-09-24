@@ -28,6 +28,11 @@
 <script>
 export default {
   name: "Games",
+  // data() {
+  //   return {
+  //     myTest: []
+  //   }
+  // },
   computed: {
     games() {
       return this.$store.state.games;
@@ -55,6 +60,6 @@ h6 {
   text-decoration: underline;
 }
 .table-dark {
-  background: rgb(33, 37, 41, 0.7) !important;
+  background: rgb(33, 37, 41, 0.7);
 }
 </style>

@@ -18,5 +18,12 @@ export default {
 }
 h4 {
   margin-top: 70px;
+  margin-bottom: 30px;
+}
+a {
+  background: rgb(33, 37, 41, 0.7);
+}
+p {
+  font-size: 110%
 }
 </style>
