@@ -6,6 +6,7 @@
       <span class="text-muted" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation"><router-link class="link" to="/Teams">Teams</router-link></span>
       <span class="text-muted" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation"><router-link class="link" to="/Locations">Locations</router-link></span>
       <span class="text-muted" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation"><router-link class="link" to="/Contact">Contact</router-link></span>
+      <span class="text-muted" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation"><router-link class="link" to="/Chat">Chat</router-link></span>
     </div>
   </div>
   <nav class="navbar navbar-dark bg-dark">

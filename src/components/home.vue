@@ -1,12 +1,14 @@
 <template>
   <div class="home">
     <img id="logo" src="../assets/nysl_logo.png" alt="logo">
+    
   </div>
 </template>
 
 <script>
+
 export default {
-  name: 'Home'
+  name: "Home"
 }
 </script>
 
@@ -17,5 +19,10 @@ h1 {
 #logo {
   margin-top: 25%;
   width: 80%;
+}
+.advice {
+  margin-top: 15px;
+  color: white;
+  background: rgb(33, 37, 41, 0.7);
 }
 </style>
