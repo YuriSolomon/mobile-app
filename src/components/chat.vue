@@ -1,22 +1,31 @@
 
 <template>
-  <div class="chat">
-    <div class="login">
-        <p class="advice">You must to be logged</p>
-        <div class="inputs">
-            <input id="textInput" class="email" type="text" placeholder="Your email...">
-            <input id="textInput" class="passward" type="text" placeholder="Your passward..."><br>
-            <button id="login" class="button is-info">Login!</button>
-        </div>
-    </div>
+<div class="chat">
+  <div class="inputs">
+    <input id="textInput" class="input" type="text" placeholder="Your message...">
+    <button id="create-post" class="button is-primary">Send</button>
+  </div>
 </div>
 </template>
 
 <script>
-
+/* eslint-disable */
 export default {
-  name: "Chat"
+  name: "Chat",
+  data() {
+    return {
+      email: "",
+      password: "",
+      user: false
+    }
+  },
+  methods: {
+
+  }
 }
+
+
+
 </script>
 
 <style scoped>

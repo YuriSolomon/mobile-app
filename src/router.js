@@ -7,6 +7,7 @@ import Teams from './components/teams.vue';
 import Locations from './components/locations.vue';
 import Contact from './components/contact.vue';
 import Chat from './components/chat.vue'
+import Login from './components/login.vue'
 
 Vue.use(VueRouter);
 
@@ -41,6 +42,11 @@ const router = new VueRouter({
             path: '/chat',
             name: 'Chat',
             component: Chat
+        },
+        {
+            path: '/login',
+            name: 'Login',
+            component: Login
         }
     ]
 });
