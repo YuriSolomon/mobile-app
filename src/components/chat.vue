@@ -1,9 +1,11 @@
-
 <template>
 <div class="chat">
-  <div class="inputs">
-    <input id="textInput" class="input" type="text" placeholder="Your message...">
-    <button id="create-post" class="button is-primary">Send</button>
+  <input id="input" class="input" type="text" placeholder="Your message...">
+  <button id="create-post" v-on:click="writePost" class="button is-primary">Send</button>
+  <div id="messages">
+    <div v-for="(key, i) in messages" :key="i">
+      <p>{{key.message}}</p>
+    </div>
   </div>
 </div>
 </template>
@@ -14,18 +16,28 @@ export default {
   name: "Chat",
   data() {
     return {
-      email: "",
-      password: "",
-      user: false
+      messages: {}
     }
   },
+  created() {
+    this.getMessage()
+  },
   methods: {
-
+    writePost() {
+      let text = document.getElementById("input").value;
+      let message = {
+        message: text
+      };
+      firebase.database().ref('chat').push(message);
+    },
+    getMessage() {
+      console.log("getPost");
+      firebase.database().ref('chat').on('value', (data) => {
+        this.messages = data.val();
+      })
+    }
   }
-}
-
-
-
+};
 </script>
 
 <style scoped>
@@ -40,5 +52,8 @@ h1 {
   margin-top: 15px;
   color: white;
   background: rgb(33, 37, 41, 0.7);
+}
+p {
+  color: white;
 }
 </style>

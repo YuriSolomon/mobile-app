@@ -14,8 +14,7 @@ export default {
   data() {
     return {
       email: "",
-      password: "",
-      user: false
+      password: ""
     };
   },
   methods: {
