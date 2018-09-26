@@ -15,7 +15,7 @@
         <tbody>
           <tr v-for="(game, index) in games" :key='index'>
             <td>{{game.date}}</td>
-            <td>{{game.name}}</td>
+            <td>{{game.team1}} vs. {{game.team2}}</td>
             <td>{{game.location}}</td>
             <td>{{game.time}}</td>
           </tr>

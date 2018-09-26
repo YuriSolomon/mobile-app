@@ -21,7 +21,7 @@ export default {
     }
   },
   beforeCreate() {
-    fetch("https://api.myjson.com/bins/1bzm30", {})
+    fetch("https://api.myjson.com/bins/vmzko", {})
         .then(response => response.json())
         .then(realData => {
 

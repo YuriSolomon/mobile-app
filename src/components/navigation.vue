@@ -13,7 +13,7 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <span class="text-muted"><router-link class="link" to="/"><h3>NYSL</h3></router-link></span>
+    <span class="text-muted" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation"><router-link class="link" to="/"><h3>NYSL</h3></router-link></span>
   </nav>
 </div>
 </template>

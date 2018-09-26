@@ -36,7 +36,7 @@ export default {
       console.log("getPost");
       firebase.database().ref('chat').on('value', (data) => {
         this.messages = data.val();
-        $(".messages").animate({ scrollTop: $(".messages").prop("scrollHeight") }, 500);
+        // $(".messages").animate({ scrollTop: $(".messages").prop("scrollHeight") }, 500);
       })
     }
   }
