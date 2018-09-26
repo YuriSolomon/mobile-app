@@ -31,7 +31,6 @@ export default {
         for(let i = 0; i < this.mappedLocations.length; i++){
             var item = this.mappedLocations[i];
             var duplicated = false;
-         
             for(let j = 0; j < i; j++){
                 if( i != j ){
                     if( this.mappedLocations[j].location == item.location && this.mappedLocations[j].address == item.address ) {
@@ -39,12 +38,10 @@ export default {
                     }
                 }
             } 
-
             if(!duplicated){
                locInside.push(item);
             }
-        }       
-
+        }
         this.locations = locInside;
         // console.log(this.locations);
     },
@@ -59,11 +56,6 @@ export default {
             games: "games"
         })
     }
-    // computed: {
-    //     games() {
-    //      return this.$store.state.games;
-    //     }
-    // }
 }
 </script>
 
