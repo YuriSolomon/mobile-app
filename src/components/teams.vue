@@ -3,7 +3,7 @@
     <h4>Teams</h4>
     <div class="container">
         <div class="row d-flex justify-content-around">
-            <div v-for="(team,i) in teams" v-on:click="getTeamInfo" :key="i" class="square m-4 d-flex align-items-center justify-content-center">
+            <div v-for="(team,i) in teams" v-on:click="getTeamInfo(team)" :key="i" class="square m-4 d-flex align-items-center justify-content-center">
               <h1>{{team}}</h1>
             </div>
         </div>
@@ -46,9 +46,8 @@ export default {
       // console.log(this.sortedTeams);
       // console.log(this.teams);
     },
-    getTeamInfo() {
+    getTeamInfo(team) {
       this.teamInfo = [];
-        let team = "U1";
         this.games.forEach(game => {
           if ((game.team1 == team) || (game.team2 == team)) {
             this.teamInfo.push(game);
