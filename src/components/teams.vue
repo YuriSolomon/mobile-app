@@ -1,6 +1,7 @@
 <template>
   <div class="teams">
     <h4>Teams</h4>
+    <p v-if="this.teamInfo.length == 0">Pick a team for more games info</p>
     <div class="container">
       <div class="row d-flex justify-content-around">
         <div v-if="this.teamInfo.length != 0" class="info container">
