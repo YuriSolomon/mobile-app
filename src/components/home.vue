@@ -1,7 +1,6 @@
 <template>
   <div class="home">
     <img id="logo" src="../assets/nysl_logo.png" alt="logo">
-    
   </div>
 </template>
 
