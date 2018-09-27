@@ -48,13 +48,12 @@ export default {
     },
     getTeamInfo() {
       this.teamInfo = [];
-      this.teams.forEach(team =>{
+        let team = "U1";
         this.games.forEach(game => {
           if ((game.team1 == team) || (game.team2 == team)) {
             this.teamInfo.push(game);
           }
         })
-      })
       console.log(this.teamInfo);
     }
   }
