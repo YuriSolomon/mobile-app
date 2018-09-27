@@ -51,9 +51,10 @@ export default {
     // },
     signOut() {
       firebase.auth().signOut().then(success => {
-        console.log("success");
-      }, function(error) {
-
+        // console.log("success");
+        this.$router.push("/login")
+      }).catch(function(error) {
+        console.log(error);
       });
     }
   }
