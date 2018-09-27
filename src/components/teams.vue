@@ -3,10 +3,8 @@
     <h4>Teams</h4>
     <div class="container">
       <div class="row d-flex justify-content-around">
-        <div v-for="(team,i) in teams" v-on:click="getTeamInfo(team)" :key="i" class="square m-4 d-flex align-items-center justify-content-center">
-          <h1>{{team}}</h1>
-        </div>
         <div v-if="this.teamInfo.length != 0" class="info container">
+          <h1>{{this.selecedTeam}} games</h1>
           <table class="table table-dark">
             <tr>
               <td>Date</td>
@@ -23,6 +21,10 @@
               </tr>
             </tbody>
           </table>
+          <button v-on:click="close">close</button>
+        </div>
+        <div v-for="(team,i) in teams" v-on:click="getTeamInfo(team)" :key="i" class="square m-4 d-flex align-items-center justify-content-center">
+          <h1>{{team}}</h1>
         </div>
       </div>
     </div>
@@ -37,7 +39,8 @@ export default {
   data() {
     return {
       teams: [],
-      teamInfo: []
+      teamInfo: [],
+      selecedTeam: ""
     };
   },
   created() {
@@ -66,12 +69,16 @@ export default {
     },
     getTeamInfo(team) {
       this.teamInfo = [];
+      this.selecedTeam = team;
       this.games.forEach(game => {
         if (game.team1 == team || game.team2 == team) {
           this.teamInfo.push(game);
         }
       });
       // console.log(this.teamInfo);
+    },
+    close() {
+      this.teamInfo = [];
     }
   }
 };

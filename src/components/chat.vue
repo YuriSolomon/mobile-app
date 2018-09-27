@@ -1,7 +1,7 @@
 <template>
 <div class="chat container">
   <div class="signout">
-    <button v-on:click="signOut">sign out</button>
+    <button v-on:click="signOut">Log out</button>
   </div>
   <div class="fixed-bottom">
     <input id="input" class="input" type="text" placeholder="Your message...">
@@ -25,7 +25,7 @@ export default {
     }
   },
   created() {
-    // this.checkUserStatus(),
+    this.checkUserStatus(),
     this.getMessage()
   },
   methods: {
@@ -42,13 +42,14 @@ export default {
         this.messages = data.val();
       })
     },
-    // checkUserStatus() {
-    //   var userisLogged = firebase.auth().currentUser.email == null;
+    checkUserStatus() {
+      console.log(firebase.auth().currentUser);
+      var userisLogged = firebase.auth().currentUser == null;
 
-    //   if (userisLogged) {
-    //     this.$router.push("/login")
-    //   }
-    // },
+      if (userisLogged) {
+        this.$router.push("/login")
+      }
+    },
     signOut() {
       firebase.auth().signOut().then(success => {
         // console.log("success");

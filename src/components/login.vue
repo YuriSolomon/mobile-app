@@ -28,7 +28,7 @@ export default {
     };
   },
   created() {
-    this.checkUserStatus()
+    this.checkUserStatus();
   },
   methods: {
     login() {
@@ -39,7 +39,6 @@ export default {
         .catch(function(error) {
           console.log(error);
         });
-        
     },
     signUp() {
       firebase
@@ -51,7 +50,8 @@ export default {
         console.log("d");
     },
     checkUserStatus() {
-      var userisLogged = firebase.auth().currentUser.email !== null;
+      console.log(firebase.auth().currentUser);
+      var userisLogged = firebase.auth().currentUser !== null;
       if (userisLogged) {
         this.$router.push("/chat")
       };
