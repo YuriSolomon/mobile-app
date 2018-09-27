@@ -2,29 +2,29 @@
   <div class="teams">
     <h4>Teams</h4>
     <div class="container">
-        <div class="row d-flex justify-content-around">
-            <div v-for="(team,i) in teams" v-on:click="getTeamInfo(team)" :key="i" class="square m-4 d-flex align-items-center justify-content-center">
-              <h1>{{team}}</h1>
-            </div>
-            <div v-if="this.teamInfo.length != 0" class="info container">
-              <table class="table table-dark">
-                <tr>
-                  <td>Date</td>
-                  <td>Teams</td>
-                  <td>Location</td>
-                  <td>Times</td>
-                </tr>
-                <tbody>
-                  <tr v-for="(game, index) in teamInfo" :key='index'>
-                    <td>{{game.date}}</td>
-                    <td>{{game.team1}} vs. {{game.team2}}</td>
-                    <td>{{game.location}}</td>
-                    <td>{{game.time}}</td>
-                  </tr>
-                  </tbody>
-              </table>
-            </div>
+      <div class="row d-flex justify-content-around">
+        <div v-for="(team,i) in teams" v-on:click="getTeamInfo(team)" :key="i" class="square m-4 d-flex align-items-center justify-content-center">
+          <h1>{{team}}</h1>
         </div>
+        <div v-if="this.teamInfo.length != 0" class="info container">
+          <table class="table table-dark">
+            <tr>
+              <td>Date</td>
+              <td>Teams</td>
+              <td>Location</td>
+              <td>Times</td>
+            </tr>
+            <tbody>
+              <tr v-for="(game, index) in teamInfo" :key='index'>
+                <td>{{game.date}}</td>
+                <td>{{game.team1}} vs. {{game.team2}}</td>
+                <td>{{game.location}}</td>
+                <td>{{game.time}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -41,23 +41,23 @@ export default {
     };
   },
   created() {
-    this.getTeams()
+    this.getTeams();
   },
   computed: {
     ...mapState({
       games: "games"
     })
   },
-  methods:{
+  methods: {
     getTeams() {
       let teams1 = this.games.map(team => team.team1);
       let teams2 = this.games.map(team => team.team2);
       let teams1and2 = teams1.concat(teams2);
       let sortedTeams = teams1and2.sort();
-      sortedTeams.forEach((team) => {
-        if (!(team == (team+1))) {
+      sortedTeams.forEach(team => {
+        if (!(team == team + 1)) {
           if (!this.teams.includes(team)) {
-            this.teams.push(team)
+            this.teams.push(team);
           }
         }
       });
@@ -66,11 +66,11 @@ export default {
     },
     getTeamInfo(team) {
       this.teamInfo = [];
-        this.games.forEach(game => {
-          if ((game.team1 == team) || (game.team2 == team)) {
-            this.teamInfo.push(game);
-          }
-        })
+      this.games.forEach(game => {
+        if (game.team1 == team || game.team2 == team) {
+          this.teamInfo.push(game);
+        }
+      });
       // console.log(this.teamInfo);
     }
   }
@@ -89,7 +89,11 @@ h4 {
   height: 100px;
   border: solid 2px black;
   border-radius: 15px;
-  background: rgb(33, 37, 41, 0.7) !important;
+  background: rgb(33, 37, 41, 0.7);
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;          /* Likely future */ 
 }
 .table {
   font-size: 65%;

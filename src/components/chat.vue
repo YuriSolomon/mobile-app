@@ -1,5 +1,8 @@
 <template>
 <div class="chat container">
+  <div class="signout">
+    <button v-on:click="signOut">sign out</button>
+  </div>
   <div class="fixed-bottom">
     <input id="input" class="input" type="text" placeholder="Your message...">
     <button id="create-post" v-on:click="writePost" class="button is-primary">Send</button>
@@ -22,6 +25,7 @@ export default {
     }
   },
   created() {
+    // this.checkUserStatus(),
     this.getMessage()
   },
   methods: {
@@ -33,11 +37,24 @@ export default {
       firebase.database().ref('chat').push(message);
     },
     getMessage() {
-      console.log("getPost");
+      // console.log("getPost");
       firebase.database().ref('chat').on('value', (data) => {
         this.messages = data.val();
-        // $(".messages").animate({ scrollTop: $(".messages").prop("scrollHeight") }, 500);
       })
+    },
+    // checkUserStatus() {
+    //   var userisLogged = firebase.auth().currentUser.email == null;
+
+    //   if (userisLogged) {
+    //     this.$router.push("/login")
+    //   }
+    // },
+    signOut() {
+      firebase.auth().signOut().then(success => {
+        console.log("success");
+      }, function(error) {
+
+      });
     }
   }
 };

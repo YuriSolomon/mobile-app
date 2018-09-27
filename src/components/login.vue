@@ -1,14 +1,14 @@
 <template>
 <div class="login">
   <div class="log">
-    <p class="advice">You must login</p>
-    <input v-model="email" class="email" type="text" placeholder="Your email...">
+    <p class="advice"><span>You must login</span></p>
+    <input v-model="email" class="email" type="text" placeholder="Your email..."><br>
     <input v-model="password" class="password" type="password" placeholder="Your password..."><br>
     <button id="login" class="button is-info" v-on:click="login">Login!</button>
   </div>
   <div class="sign">
-    <p class="advice">Sign up</p>
-    <input v-model="email1" class="email" type="text" placeholder="Your email...">
+    <p class="advice"><span>Sign up</span></p>
+    <input v-model="email1" class="email" type="text" placeholder="Your email..."><br>
     <input v-model="password1" class="password" type="password" placeholder="Your password..."><br>
     <button id="login" class="button is-info" v-on:click="signUp">Sign up!</button>
   </div>
@@ -27,15 +27,19 @@ export default {
       password1: "",
     };
   },
+  created() {
+    this.checkUserStatus()
+  },
   methods: {
     login() {
       firebase
         .auth()
         .signInWithEmailAndPassword(this.email, this.password)
-        .then(success => this.$router.push("/chat"))
+        .then(success => this.user = true, this.$router.push("/chat"))
         .catch(function(error) {
           console.log(error);
         });
+        
     },
     signUp() {
       firebase
@@ -45,6 +49,12 @@ export default {
           console.log(error);
         });
         console.log("d");
+    },
+    checkUserStatus() {
+      var userisLogged = firebase.auth().currentUser.email !== null;
+      if (userisLogged) {
+        this.$router.push("/chat")
+      };
     }
   }
 };
@@ -61,7 +71,10 @@ h1 {
 .advice {
   margin-top: 15px;
   color: white;
+}
+p span {
   background: rgb(33, 37, 41, 0.7);
+  padding: 5px;
 }
 .log {
   margin-top: 120px;
