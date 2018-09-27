@@ -6,6 +6,24 @@
             <div v-for="(team,i) in teams" v-on:click="getTeamInfo(team)" :key="i" class="square m-4 d-flex align-items-center justify-content-center">
               <h1>{{team}}</h1>
             </div>
+            <div v-if="this.teamInfo.length != 0" class="info container">
+              <table class="table table-dark">
+                <tr>
+                  <td>Date</td>
+                  <td>Teams</td>
+                  <td>Location</td>
+                  <td>Times</td>
+                </tr>
+                <tbody>
+                  <tr v-for="(game, index) in teamInfo" :key='index'>
+                    <td>{{game.date}}</td>
+                    <td>{{game.team1}} vs. {{game.team2}}</td>
+                    <td>{{game.location}}</td>
+                    <td>{{game.time}}</td>
+                  </tr>
+                  </tbody>
+              </table>
+            </div>
         </div>
     </div>
   </div>
@@ -53,7 +71,7 @@ export default {
             this.teamInfo.push(game);
           }
         })
-      console.log(this.teamInfo);
+      // console.log(this.teamInfo);
     }
   }
 };
@@ -72,5 +90,11 @@ h4 {
   border: solid 2px black;
   border-radius: 15px;
   background: rgb(33, 37, 41, 0.7) !important;
+}
+.table {
+  font-size: 65%;
+}
+.table-dark {
+  background: rgb(33, 37, 41, 0.7);
 }
 </style>
