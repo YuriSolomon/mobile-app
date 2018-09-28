@@ -5,6 +5,7 @@
         <div v-for="(item, index) in locations" :key="index">
             <h5>{{item.location}}</h5>
             <p>{{item.adress}}</p>
+            <iframe :src="item.map" frameborder="0"></iframe>
         </div>
     </div>
   </div>
@@ -20,7 +21,7 @@ export default {
         this.games.forEach(game => {
             let newObject = {};
             for(let key in game){
-                if(key == 'location' || key == 'adress'){
+                if(key == 'location' || key == 'adress' || key == 'map'){
                     newObject[key] = game[key];
                 }
             }
