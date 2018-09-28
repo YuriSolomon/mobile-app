@@ -4,8 +4,8 @@
     <div class="container">
         <div v-for="(item, index) in locations" :key="index">
             <h5>{{item.location}}</h5>
-            <p v-on:click="showMap">{{item.adress}}</p>
-            <iframe v-if="map" :src="item.map" frameborder="0"></iframe>
+            <p v-on:click="showMap(item)">{{item.adress}}</p>
+            <iframe v-if="item.mapStatus" :src="item.map" frameborder="0"></iframe>
         </div>
     </div>
   </div>
@@ -22,8 +22,7 @@ export default {
     data() {
         return{
             locations: [],
-            mappedLocations: [],
-            map: false
+            mappedLocations: []
         }
     },
     computed: {
@@ -66,12 +65,14 @@ export default {
             });
             // console.log(this.locations);
         },
-        showMap() {
-            if (this.map) {
-                this.map = false
+        showMap(item) {
+            if (item.mapStatus) {
+                item.mapStatus = false
             } else {
-                this.map = true
+                item.mapStatus = true
             }
+            // eslint-disable-next-line
+            console.log(item.mapStatus);
         }
     }
 }
