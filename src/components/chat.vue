@@ -8,8 +8,15 @@
     <button id="create-post" v-on:click="writePost" class="button is-primary">Send</button>
   </div>
   <div class="messages container" id="messages">
-    <div class="message m-3" v-for="(key, i) in messages" :key="i">
-      <p>{{key.message}}</p>
+    <div v-for="(key, i) in messages" :key="i">
+      <div class="message m-3 user" v-if="key.email == currentUser">
+        <p>{{key.email}}:</p>
+        <p>{{key.message}}</p>
+      </div>
+      <div class="message m-3 other" v-else>
+        <p>{{key.email}}:</p>        
+        <p>{{key.message}}</p>
+      </div>
     </div>
   </div>
 </div>
@@ -21,7 +28,8 @@ export default {
   name: "Chat",
   data() {
     return {
-      messages: {}
+      messages: {},
+      currentUser: ""
     }
   },
   created() {
@@ -31,7 +39,9 @@ export default {
   methods: {
     writePost() {
       let text = document.getElementById("input").value;
+      let user  = firebase.auth().currentUser.email;
       let message = {
+        email: user,
         message: text
       };
       firebase.database().ref('chat').push(message);
@@ -43,11 +53,16 @@ export default {
       })
     },
     checkUserStatus() {
-      console.log(firebase.auth().currentUser);
+      // console.log(firebase.auth().currentUser.email);
       var userisLogged = firebase.auth().currentUser == null;
 
       if (userisLogged) {
         this.$router.push("/login")
+      } else {
+        this.currentUser = firebase.auth().currentUser.email;
+        this.$forceUpdate();
+        console.log(this.currentUser)
+        console.log(firebase.auth().currentUser.email)
       }
     },
     signOut() {
@@ -74,29 +89,35 @@ h1 {
   margin-top: 15px;
   color: white;
 }
-.messages {
-  background: rgb(33, 37, 41, 0.7);
-  min-height: 550px;
-}
 #messages {
-  height: 300px;
+  height: 500px;
   width: 300px;
   overflow: scroll;
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
+  background: rgb(33, 37, 41, 0.7);
+
 }
 p {
   color: white;
   margin: 10px;
 }
-.message {
+.user {
   min-width: 70px;
   min-height: 40px;
   background: grey;
   text-align: right;
-  max-width: 80%;
+  max-width: 60%;
   align-self: flex-end;
+  border-radius: 10px;
+}
+.other {
+  min-width: 70px;
+  min-height: 40px;
+  background: rgb(85, 81, 81);
+  text-align: left;
+  max-width: 60%;
   border-radius: 10px;
 }
 </style>
