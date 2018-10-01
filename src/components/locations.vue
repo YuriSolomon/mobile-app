@@ -1,6 +1,7 @@
 <template>
   <div class="locations">
     <h4>Locations</h4>
+    <h6>Click address to see a map</h6>
     <div class="container">
         <div v-for="(item, index) in locations" :key="index">
             <h5>{{item.location}}</h5>
@@ -73,6 +74,7 @@ export default {
             }
             // eslint-disable-next-line
             console.log(item.mapStatus);
+            this.$forceUpdate();
         }
     }
 }
