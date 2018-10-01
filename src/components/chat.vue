@@ -45,6 +45,7 @@ export default {
         message: text
       };
       firebase.database().ref('chat').push(message);
+      document.getElementById("input").value = "";
     },
     getMessage() {
       // console.log("getPost");
