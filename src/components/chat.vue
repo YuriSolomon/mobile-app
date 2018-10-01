@@ -7,8 +7,8 @@
     <input id="input" class="input" type="text" placeholder="Your message...">
     <button id="create-post" v-on:click="writePost" class="button is-primary">Send</button>
   </div>
-  <div class="messages container" id="messages">
-    <div v-for="(key, i) in messages" :key="i">
+  <div class="container" id="messages">
+    <div class="messages" v-for="(key, i) in messages" :key="i">
       <div class="message m-3 user" v-if="key.email == currentUser">
         <p>{{key.email}}:</p>
         <p>{{key.message}}</p>
@@ -61,8 +61,8 @@ export default {
       } else {
         this.currentUser = firebase.auth().currentUser.email;
         this.$forceUpdate();
-        console.log(this.currentUser)
-        console.log(firebase.auth().currentUser.email)
+        // console.log(this.currentUser)
+        // console.log(firebase.auth().currentUser.email)
       }
     },
     signOut() {
@@ -94,30 +94,33 @@ h1 {
   width: 300px;
   overflow: scroll;
   margin-bottom: 20px;
+  background: rgb(33, 37, 41, 0.7);
+}
+.messages {
   display: flex;
   flex-direction: column;
-  background: rgb(33, 37, 41, 0.7);
-
 }
 p {
   color: white;
   margin: 10px;
+  word-break: break-all;
 }
 .user {
-  min-width: 70px;
+  min-width: 120px;
   min-height: 40px;
-  background: grey;
+  background: rgb(129, 126, 126);
   text-align: right;
-  max-width: 60%;
+  max-width: 80%;
   align-self: flex-end;
   border-radius: 10px;
 }
 .other {
-  min-width: 70px;
+  min-width: 120px;
   min-height: 40px;
-  background: rgb(85, 81, 81);
+  background: rgb(83, 79, 79);
   text-align: left;
-  max-width: 60%;
+  max-width: 80%;
+  align-self: flex-start;
   border-radius: 10px;
 }
 </style>
