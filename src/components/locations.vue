@@ -73,7 +73,7 @@ export default {
                 item.mapStatus = true
             }
             // eslint-disable-next-line
-            console.log(item.mapStatus);
+            // console.log(item.mapStatus);
             this.$forceUpdate();
         }
     }

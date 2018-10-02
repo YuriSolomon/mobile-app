@@ -47,10 +47,10 @@ export default {
         .catch(function(error) {
           console.log(error);
         });
-        console.log("d");
+        // console.log("d");
     },
     checkUserStatus() {
-      console.log(firebase.auth().currentUser);
+      // console.log(firebase.auth().currentUser);
       var userisLogged = firebase.auth().currentUser !== null;
       if (userisLogged) {
         this.$router.push("/chat")

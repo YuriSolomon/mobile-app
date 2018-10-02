@@ -92,7 +92,7 @@ h1 {
 }
 #messages {
   height: 500px;
-  width: 300px;
+  width: 90%;
   overflow: scroll;
   margin-bottom: 20px;
   background: rgb(33, 37, 41, 0.7);
