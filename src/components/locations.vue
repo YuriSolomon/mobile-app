@@ -3,10 +3,10 @@
     <h4>Locations</h4>
     <h6>Click address to see a map</h6>
     <div class="container">
-        <div v-for="(item, index) in locations" :key="index">
+        <div class="location container" v-for="(item, index) in locations" :key="index">
             <h5>{{item.location}}</h5>
             <p v-on:click="showMap(item)">{{item.adress}}</p>
-            <iframe v-if="item.mapStatus" :src="item.map" frameborder="0"></iframe>
+            <iframe class="map" v-if="item.mapStatus" :src="item.map" frameborder="0"></iframe>
         </div>
     </div>
   </div>
@@ -88,13 +88,22 @@ h4 {
     margin-top: 70px;
 }
 h5 {
-    text-align: left;
     text-decoration: underline;
-    margin-top: 30px;
-    background: rgb(33, 37, 41, 0.7);
-}
-P {
     text-align: left;
+}
+p {
+    text-align: left;
+    font-size: 97%;
+}
+.location {
+    margin-top: 30px;
+    padding-top: 5px;
+    padding-bottom: 1px;
     background: rgb(33, 37, 41, 0.7);
+    border-radius: 15px;
+}
+.map {
+    text-align: center;
+    margin-bottom: 10px;
 }
 </style>
